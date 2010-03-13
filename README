@@ -1,0 +1,30 @@
+OneManga Download Script
+licensed under the GPLv3
+
+NOTE: I am not responsible for any trouble you get into using this script.
+Use it at your own risk.
+
+
+A simple script to download manga chapters off of OneManga.com (they don't have
+download links, only the ability to view manga online). This script parses
+pages and deduces the correct URL's for all the manga images, downloads them
+sequentially, and produces a CBZ file (Comic Book Archive) for viewing. CBZ
+files can be opened in document viewers like Evince or comic book viewers like
+Comix. I recommend Comix for viewing, as it has a manga mode, double page mode,
+and a variety of a features that make reading manga or comics a pleasure.
+
+Also, because this script downloads pictures from OneManga.com and uses up
+their bandwith without reciprocating by clicking ads or generating pageviews,
+please be nice and click a few of their ads. If they cannot get enough ad
+revenue, they cannot keep the site up and all that manga will be gone. So
+remember, be nice and don't overuse this.
+
+USAGE:
+python omdl.py [MANGA] [CHAPTER]
+
+EXAMPLES:
+python omdl.py Bleach 395
+python omdl.py One_Piece 577
+python omdl.py Naruto 486
+python omdl.py Black_Cat 95
+python omdl.py Ai_Kora 105
