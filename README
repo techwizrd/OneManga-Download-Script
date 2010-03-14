@@ -21,10 +21,21 @@ remember, be nice and don't overuse this.
 
 USAGE:
 python omdl.py [MANGA] [CHAPTER]
+python omdl.py [MANGA]
 
 EXAMPLES:
+To download a specific chapter, use the following examples.
+
 python omdl.py Bleach 395
 python omdl.py One_Piece 577
 python omdl.py Naruto 486
 python omdl.py Black_Cat 95
 python omdl.py Ai_Kora 105
+
+To download all available chapters of a manga, use the following examples.
+
+python omdl.py Naruto
+python omdl.py Black_Cat
+
+NOTE: When downloading a chapters or set of chapters, this script will skip
+over chapters that have already been downloaded
