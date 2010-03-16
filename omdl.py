@@ -91,12 +91,22 @@ def download_manga(manga):
     for chapter in chapters:
         download_manga_chapter(manga, chapter)
 
+def download_manga_range(manga, range=None):
+    """Download a range of chapters of a manga."""
+    chapters = get_chapter_numbers(manga)
+    a = chapters.index(range[0])
+    b = chapters.index(range[1])
+    for chapter in chapters[b:a+1]:
+        download_manga_chapter(manga, chapter)
+
 def cleanup():
     """Clean up unneccesary files created during download."""
     os.system("rm -rf media.onemanga.com page.html image_urls.txt")
 
 if __name__ == '__main__':
-    if len(sys.argv) == 3:
+    if len(sys.argv) == 4:
+        download_manga_range(sys.argv[1], (sys.argv[2], sys.argv[3]))
+    elif len(sys.argv) == 3:
         download_manga_chapter(sys.argv[1], sys.argv[2])
     elif len(sys.argv) == 2:
         download_manga(sys.argv[1])
@@ -104,4 +114,5 @@ if __name__ == '__main__':
         print("Too many or too few arguements.")
         print("USAGE: python omdl.py [MANGA] [CHAPTER]")
         print("       python omdl.py [MANGA]")
+        print("       python omdl.py [MANGA] [RANGE START] [RANGE END]")
     cleanup()
