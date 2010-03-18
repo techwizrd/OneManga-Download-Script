@@ -59,7 +59,7 @@ def make_comic_book_archive(manga, chapter):
     Zip all images in the given directory into a CBZ file and return the
     filename of the created CBZ file.
     """
-    dirname = manga + "/" + chapter
+    dirname = manga + "/" + chapter.zfill(4)
     os.system("mkdir -pv " + dirname)
     os.system("mv media.onemanga.com/*/*/* %s/" % dirname)
     os.system("zip -qr %s.cbz %s/* && rm -rf %s" % (dirname, dirname, dirname))
